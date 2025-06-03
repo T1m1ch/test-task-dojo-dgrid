@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test task</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./node_modules/dgrid/css/dgrid.css">
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+        <div id="grid"></div>
+        <script>
+            var dojoConfig = {
+                async: true,
+                packages: [
+                {
+                    name: "dojo",
+                    location: "/node_modules/dojo",
+                },
+                {
+                    name: "dgrid",
+                    location: "/node_modules/dgrid"
+                },
+                {
+                    name: "dstore",
+                    location: "/node_modules/dojo-dstore"
+                },
+                {
+                    name: "data",
+                    location: '/src/data'
+                }]
+            }    
+        </script>
+        <script src="./node_modules/dojo/dojo.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
