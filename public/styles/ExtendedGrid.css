@@ -1,0 +1,85 @@
+.extended-grid * {
+    padding: 0;
+    margin: 0;
+}
+
+.extended-grid .dgrid-header {
+    display: flex;
+    height: 42px;
+}
+
+.extended-grid .dgrid-header svg {
+    transform: rotate(180deg);
+}
+
+.extended-grid .dgrid-header .opened svg {
+    transform: unset;
+}
+
+.extended-grid .dgrid-row .dgrid-row-table {
+    min-height: 42px;
+}
+
+
+.extended-grid .dgrid-row-table, tr {
+    display: flex;
+}
+
+.extended-grid .dgrid-row .dgrid-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.extended-grid .inner-cell {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    line-height: 15.5px;
+    font-size: 16px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.extended-grid .drop-down-cell {
+    flex-direction: row-reverse;
+    width: calc(100% - 32px);
+}
+
+.extended-grid .closed {
+    max-height: 32px;
+}
+
+.extended-grid .closed::after {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    font-weight:bolder;
+    font-size: 1em;
+    content: "...";
+    align-items: end;
+}
+
+.extended-grid .drop-down-cell-button {
+    display: flex;
+    font-weight: 900;
+    height: 16px;
+    aspect-ratio: 1;
+    background: none;
+    border: none;
+}
+
+.extended-grid .drop-down-cell-button svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.extended-grid .drop-down-cell-button:hover svg {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.extended-grid .closed button svg {
+    transform: rotate(180deg);
+}

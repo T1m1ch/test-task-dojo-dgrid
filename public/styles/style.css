@@ -1,107 +1,25 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
 #grid {
-    width: 440px;
+    --field-name-width: 100px;
+    --field-age-width: 65px;
+    --field-sex-width: 65px;
+    --field-address-width: 200px;
+    width: calc(var(--field-name-width) + var(--field-age-width) + var(--field-sex-width) + var(--field-address-width));
     height: 440px;
     border-radius: 4px;
 }
 
-#grid .dgrid-header {
-    display: flex;
-    height: 42px;
-    background-color: rgb(160, 214, 221);
-}
-
-#grid .dgrid-header svg {
-    transform: rotate(180deg);
-}
-
-#grid .dgrid-header .opened svg {
-    transform: unset;
-}
-
-#grid .dgrid-row .dgrid-row-table {
-    min-height: 42px;
-}
-
-
-#grid .dgrid-row-table, tr {
-    display: flex;
-}
-
-#grid .dgrid-row .dgrid-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#grid .inner-cell {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    line-height: 15.5px;
-    font-size: 16px;
-    overflow: hidden;
-}
-
-#grid .drop-down-cell {
-    flex-direction: row-reverse;
-    width: calc(100% - 32px);
-}
-
-#grid .closed {
-    max-height: 32px;
-}
-
-#grid .closed::after {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 0px;
-    font-weight:bolder;
-    font-size: 1em;
-    content: "...";
-    align-items: end;
-}
-
-#grid .drop-down-cell-button {
-    display: flex;
-    font-weight: 900;
-    height: 16px;
-    aspect-ratio: 1;
-    background: none;
-    border: none;
-}
-
-#grid .drop-down-cell-button svg {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-#grid .drop-down-cell-button:hover svg {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#grid .closed button svg {
-    transform: rotate(180deg);
-}
-
 #grid .field-name {
-    width: 100px;
+    width: var(--field-name-width);
 }
 
 #grid .field-age {
-    width: 65px;
+    width: var(--field-age-width);
 }
 
 #grid .field-sex {
-    width: 65px;
+    width: var(--field-sex-width);
 }
 
 #grid .field-address {
-    width: 200px;
+    width: var(--field-address-width);
 }
