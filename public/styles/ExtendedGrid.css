@@ -3,11 +3,6 @@
     margin: 0;
 }
 
-.extended-grid .dgrid-header {
-    display: flex;
-    height: 42px;
-}
-
 .extended-grid .dgrid-header svg {
     transform: rotate(180deg);
 }
@@ -15,11 +10,6 @@
 .extended-grid .dgrid-header .opened svg {
     transform: unset;
 }
-
-.extended-grid .dgrid-row .dgrid-row-table {
-    min-height: 42px;
-}
-
 
 .extended-grid .dgrid-row-table, tr {
     display: flex;
@@ -29,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 42px;
 }
 
 .extended-grid .inner-cell {
@@ -46,15 +37,15 @@
     width: calc(100% - 32px);
 }
 
-.extended-grid .closed {
+.extended-grid .drop-down-cell.closed {
     max-height: 32px;
 }
 
-.extended-grid .closed::after {
+.extended-grid .drop-down-cell.closed::after {
     display: flex;
     position: absolute;
     bottom: 0;
-    right: 0px;
+    right: 0;
     font-weight:bolder;
     font-size: 1em;
     content: "...";

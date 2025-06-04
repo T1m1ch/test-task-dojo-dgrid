@@ -14,10 +14,6 @@ require(["utils/ExtendedGrid", "data/gridData", "dojo/domReady!"], function(Exte
         }
     }
 
-    /*
-    
-    */
-
     const grid = new ExtendedGrid({columns}, "grid");
     grid.renderArray(gridData.data);
 });
