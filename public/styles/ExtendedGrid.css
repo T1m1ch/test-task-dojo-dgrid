@@ -4,11 +4,11 @@
 }
 
 .extended-grid .dgrid-header svg {
-    transform: rotate(180deg);
+    transform: unset;
 }
 
-.extended-grid .dgrid-header .opened svg {
-    transform: unset;
+.extended-grid .dgrid-header .closed svg {
+    transform: rotate(180deg);
 }
 
 .extended-grid .dgrid-row-table, tr {

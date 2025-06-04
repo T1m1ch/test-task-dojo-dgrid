@@ -41,15 +41,16 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
                 const headers = this.domNode.querySelectorAll(`[role="columnheader"]`);
                 headers.forEach(header => {
                     if (this.#_extendedColumns.has(header.classList[2])) {
-                        const dropDownButton = domConstruct.place(`<button class="drop-down-cell-button hidden"><svg width="16" height="16" viewBox="0 0 16 16"><polyline points="5 7 8 5 11 7" stroke="black" stroke-width="2" fill="none" /><polyline points="5 11 8 9 11 11" stroke="black" stroke-width="2" fill="none" /></svg></button>`, header);
+                        header.classList.add("closed");
+                        const dropDownButton = domConstruct.place(`<button class="drop-down-cell-button"><svg width="16" height="16" viewBox="0 0 16 16"><polyline points="5 7 8 5 11 7" stroke="black" stroke-width="2" fill="none" /><polyline points="5 11 8 9 11 11" stroke="black" stroke-width="2" fill="none" /></svg></button>`, header);
                         on(dropDownButton, "click", () => {
                             const dropDownCells = this.domNode.querySelectorAll(`.drop-down-cell._${header.classList[2]}`);
-                            const wasOpened = header.classList.toggle("opened");
+                            const wasClosed = header.classList.toggle("closed");
                             dropDownCells.forEach(cell => {
-                                if (wasOpened) {
-                                    cell.classList.remove("closed");
+                                if (wasClosed) {
+                                    cell.classList.add("closed");  
                                 } else {
-                                    cell.classList.add("closed");   
+                                    cell.classList.remove("closed");
                                 }
                             });
                         });
