@@ -2,11 +2,11 @@
 #grid {
     --field-name-width: 100px;
     --field-age-width: 40px;
-    --field-sex-width: 80px;
+    --field-sex-width: 93px;
     --field-address-width: 200px;
 }
 
-    
+
 #grid .field-name {
     width: var(--field-name-width);
 }

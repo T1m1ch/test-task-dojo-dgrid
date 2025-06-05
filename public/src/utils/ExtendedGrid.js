@@ -4,13 +4,6 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
         constructor(options, domNode) {
             const extendedColumns = new Set();
 
-            const getRendeHeaderCellFunction = (label) => {
-                return (node) => {
-                    node.style.minHeight = "42px";
-                    node.textContent = label;
-                }
-            }
-
             const renderCell = (object, value, node) => {
                 const inserted = domConstruct.place(`<div class="inner-cell">${value}</div>`, node);
                 requestAnimationFrame(() => {
@@ -26,7 +19,7 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
             }
       
             options.columns = Object.entries(options.columns).reduce((acc, [key, value]) => {
-                acc[key] = { ...value, renderCell, renderHeaderCell: getRendeHeaderCellFunction(value.label)};
+                acc[key] = { ...value, renderCell};
                 return acc;
             }, {});
 
@@ -35,17 +28,17 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
             if (options.resizebleColumns !== false) {
                 this.domNode.classList.add("resizeble");
             }
+            this.resize();
             this.#_extendedColumns = extendedColumns;
         }
-
-        renderArray(data) {
-            super.renderArray(data);
+        updateHeader() {
             setTimeout(() => {
                 const headers = this.domNode.querySelectorAll(`[role="columnheader"]`);
                 headers.forEach(header => {
                     if (this.#_extendedColumns.has(header.classList[2])) {
                         header.classList.add("closed");
                         const dropDownButton = domConstruct.place(`<button class="drop-down-cell-button"><svg width="16" height="16" viewBox="0 0 16 16"><polyline points="5 7 8 5 11 7" stroke="black" stroke-width="2" fill="none" /><polyline points="5 11 8 9 11 11" stroke="black" stroke-width="2" fill="none" /></svg></button>`, header);
+                        console.log(header, dropDownButton);
                         on(dropDownButton, "click", () => {
                             const dropDownCells = this.domNode.querySelectorAll(`.drop-down-cell._${header.classList[2]}`);
                             const wasClosed = header.classList.toggle("closed");
@@ -60,6 +53,10 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
                     }
                 });
             }, 0);
+        }
+        renderArray(data) {
+            super.renderArray(data);
+            this.updateHeader();
         }
     }
 });
