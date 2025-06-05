@@ -3,14 +3,6 @@
     margin: 0;
 }
 
-.extended-grid .dgrid-header svg {
-    transform: unset;
-}
-
-.extended-grid .dgrid-header .closed svg {
-    transform: rotate(180deg);
-}
-
 .extended-grid .dgrid-row-table, tr {
     display: flex;
 }
