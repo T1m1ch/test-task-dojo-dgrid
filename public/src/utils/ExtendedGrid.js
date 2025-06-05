@@ -14,7 +14,7 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
             const renderCell = (object, value, node) => {
                 const inserted = domConstruct.place(`<div class="inner-cell">${value}</div>`, node);
                 requestAnimationFrame(() => {
-                    if (parseFloat(window.getComputedStyle(inserted).height) > 16.0) {
+                    if (parseFloat(window.getComputedStyle(inserted).height) > 32) {
                         extendedColumns.add(node.classList[2]); 
                         inserted.classList.add(`_${node.classList[2]}`);
                         inserted.classList.add("drop-down-cell");
@@ -32,6 +32,9 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
 
             super(options, domNode);
             this.domNode.classList.add("extended-grid");
+            if (options.resizebleColumns !== false) {
+                this.domNode.classList.add("resizeble");
+            }
             this.#_extendedColumns = extendedColumns;
         }
 
@@ -51,7 +54,7 @@ define(["dojo/dom-construct", "dojo/on", "dgrid/OnDemandGrid"], (domConstruct, o
                                     cell.classList.add("closed");  
                                 } else {
                                     cell.classList.remove("closed");
-                                }
+                                }   
                             });
                         });
                     }

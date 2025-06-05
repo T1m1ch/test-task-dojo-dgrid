@@ -9,7 +9,7 @@ define([], function () {
             { name: "Lina", age: 22, sex: "Female", address: "Saint Petersburg, Mayakovskaya, Building 17, Block 4, Apartment 98" },
             { name: "Ivan", age: 31, sex: "Male", address: "Moscow"},
             { name: "Olga", age: 27, sex: "Female", address: "Kazan, Sunny Lane, Building 14, Block 1, Apartment 33" },
-            { name: "Kate", age: 36, sex: "Female", address: "Novosibirsk, Park Avenue, Building 3, Block 2, Apartment 77" },
+            { name: "Kate", age: 36, sex: "Female", address: "Two lines of long and boring text" },
             { name: "Dmitry", age: 45, sex: "Male", address: "Yekaterinburg, Nevsky Prospect, Building 21, Block 5, Apartment 159" }
         ]
     }

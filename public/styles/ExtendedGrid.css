@@ -3,8 +3,10 @@
     margin: 0;
 }
 
+
 .extended-grid .dgrid-row-table, tr {
     display: flex;
+    flex: 1;
 }
 
 .extended-grid .dgrid-row .dgrid-cell {
@@ -14,6 +16,16 @@
     min-height: 42px;
 }
 
+.extended-grid:not(.resizeble) .dgrid-header .dgrid-cell {
+    flex: 1;
+}
+
+.extended-grid:not(.resizeble) .dgrid-row .dgrid-cell {
+    flex: 1;
+}
+
+
+
 .extended-grid .inner-cell {
     display: flex;
     justify-content: center;
@@ -21,7 +33,7 @@
     line-height: 15.5px;
     font-size: 16px;
     overflow: hidden;
-    word-break: break-all;
+    text-align: center;
 }
 
 .extended-grid .drop-down-cell {

@@ -1,13 +1,12 @@
+
 #grid {
     --field-name-width: 100px;
-    --field-age-width: 65px;
-    --field-sex-width: 65px;
+    --field-age-width: 40px;
+    --field-sex-width: 80px;
     --field-address-width: 200px;
-    width: calc(var(--field-name-width) + var(--field-age-width) + var(--field-sex-width) + var(--field-address-width));
-    height: 440px;
-    border-radius: 4px;
 }
 
+    
 #grid .field-name {
     width: var(--field-name-width);
 }
